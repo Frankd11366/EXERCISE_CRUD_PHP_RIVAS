@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../../vistas/cliente/index.php"><img src="../../src/images/logo.png" alt="Logo" width="30" height="30">CLIENTES</a>
+    <a class="navbar-brand" href="../../vistas/cliente/index.php"><img src="../../src/images/apple.png" alt="Logo" width="30" height="30">CLIENTES</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       
     </button>
