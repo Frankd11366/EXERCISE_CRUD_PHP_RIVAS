@@ -9,8 +9,7 @@
         // var_dump($_GET);
         $_GET['cli_nombre'] = htmlspecialchars( $_GET['cli_nombre']);
         $_GET['cli_apellido'] = htmlspecialchars( $_GET['cli_apellido']);
-        $_GET['cli_nit'] = htmlspecialchars( $_GET['cli_nit']);
-        $_GET['cli_telefono'] = filter_var( $_GET['cli_telefono'] , FILTER_SANITIZE_NUMBER_INT);
+    
         $objCliente = new Cliente($_GET);
         $clientes = $objCliente->buscar();
         $resultado = [
@@ -18,7 +17,7 @@
             'datos' => $clientes,
             'codigo' => 1
         ];
-        // var_dump($productos);
+        // var_dump($clientes);
         
     } catch (Exception $e) {
         $resultado = [
@@ -41,7 +40,7 @@
     </div>
     <div class="row mb-4 justify-content-center">
         <div class="col-lg-6">
-            <a href="../../vistas/cliente/buscar.php" class="btn btn-primary w-100">Volver al formulario de busqueda</a>
+            <a href="../../vistas/clientes/buscar.php" class="btn btn-primary w-100">Volver al formulario de busqueda</a>
         </div>
     </div>
     <h1 class="text-center">Listado de clientes</h1>
@@ -52,8 +51,9 @@
                     <tr>
                         <th>No.</th>
                         <th>Nombre</th>
-                        <th>NIT</th>
-                        <th>Teléfono</th>
+                        <th>Apellido</th>
+                        <th>Nit</th>
+                        <th>Telefono</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -62,7 +62,8 @@
                         <?php foreach ($clientes as $key => $cliente) : ?>
                             <tr>
                                 <td><?= $key + 1?></td>
-                                <td><?= $cliente['cli_nombre'] . " " . $cliente['cli_apellido'] ?></td>
+                                <td><?= $cliente['cli_nombre'] ?></td>
+                                <td><?= $cliente['cli_apellido'] ?></td>
                                 <td><?= $cliente['cli_nit'] ?></td>
                                 <td><?= $cliente['cli_telefono'] ?></td>
                                 <td class="text-center">
@@ -71,8 +72,8 @@
                                         Acciones
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-square me-2"></i>Modificar</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
+                                        <li><a class="dropdown-item" href="../../vistas/clientes/modificar.php?cli_id=<?= base64_encode($cliente['cli_id'])?>"><i class="bi bi-pencil-square me-2"></i>Modificar</a></li>
+                                        <li><a class="dropdown-item" href="../../controladores/clientes/eliminar.php?cli_id=<?= base64_encode($cliente['cli_id'])?>"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
                                     </ul>
                                 </div>
 
@@ -81,7 +82,7 @@
                         <?php endforeach ?>
                     <?php else : ?>
                         <tr>
-                            <td colspan="4">No hay productos registrados</td>
+                            <td colspan="4">No hay clientes registrados</td>
                         </tr>  
                     <?php endif ?>
                 </tbody>
