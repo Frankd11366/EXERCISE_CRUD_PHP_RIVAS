@@ -4,7 +4,7 @@ include_once '../../vistas/templates/header.php'; ?>
 
 <h1 class="text-center">FORMULARIO DE CLIENTES</h1>
 <div class="row justify-content-center">
-    <form action="../../controladores/clientes/buscar.php" method="GET" class="border bg-light shadow rounded p-4 col-lg-6">
+    <form action="../../controladores/cliente/buscar.php" method="GET" class="border bg-light shadow rounded p-4 col-lg-6">
         <div class="row mb-3">
             <div class="col">
                 <label for="cli_nombre">NOMBRE</label>
@@ -20,7 +20,7 @@ include_once '../../vistas/templates/header.php'; ?>
         
         <div class="row">
             <div class="col">
-                <button type="submit" class="btn btn-info w-100 bg-dark text-white"> BUSCAR</button>
+                <button type="submit" class="btn btn-info w-100 bg-success text-white"> BUSCAR</button>
             </div>
         </div>
     </form>

@@ -34,7 +34,7 @@ class Cliente extends Conexion{
 
       public static function buscarTodos(...$columnas){
         $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
-        $sql = "SELECT $cols FROM clientes where cli_situacion = 1 ";
+        $sql = "SELECT $cols FROM cliente where cli_situacion = 1 ";
         $resultado = self::servir($sql);
         return $resultado;
     }
@@ -42,7 +42,7 @@ class Cliente extends Conexion{
 
     public function buscar(...$columnas){
         $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
-        $sql = "SELECT $cols FROM clientes where cli_situacion = 1 ";
+        $sql = "SELECT $cols FROM cliente where cli_situacion = 1 ";
 
 
         if($this->cli_nombre != ''){
@@ -57,14 +57,14 @@ class Cliente extends Conexion{
     }
 
     public function buscarId($id){
-        $sql = " SELECT * FROM clientes WHERE cli_situacion = 1 AND cli_id = '$id' ";
+        $sql = " SELECT * FROM cliente WHERE cli_situacion = 1 AND cli_id = '$id' ";
         $resultado = array_shift( self::servir($sql)) ;
 
         return $resultado;
     }
 
     public function modificar(){
-        $sql = "UPDATE clientes SET cli_nombre = '$this->cli_nombre', cli_apellido = '$this->cli_apellido', cli_nit = '$this->cli_nit', cli_telefono = '$this->cli_telefono' WHERE cli_id = $this->cli_id ";
+        $sql = "UPDATE cliente SET cli_nombre = '$this->cli_nombre', cli_apellido = '$this->cli_apellido', cli_nit = '$this->cli_nit', cli_telefono = '$this->cli_telefono' WHERE cli_id = $this->cli_id ";
         $resultado = $this->ejecutar($sql);
         return $resultado; 
     }
@@ -73,7 +73,7 @@ class Cliente extends Conexion{
         // $sql = "DELETE FROM clientes WHERE cli_id = $this->cli_id ";
 
         // echo $sql;
-        $sql = "UPDATE clientes SET cli_situacion = 0 WHERE cli_id = $this->cli_id ";
+        $sql = "UPDATE cliente SET cli_situacion = 0 WHERE cli_id = $this->cli_id ";
         $resultado = $this->ejecutar($sql);
         return $resultado; 
     }
