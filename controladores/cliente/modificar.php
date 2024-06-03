@@ -1,7 +1,7 @@
 <?php
-     ini_set('display_errors', '1');
-     ini_set('display_startup_errors', '1');
-     error_reporting(E_ALL);
+    //  ini_set('display_errors', '1');
+    //  ini_set('display_startup_errors', '1');
+    //  error_reporting(E_ALL);
 
 require '../../modelos/Cliente.php';
 
@@ -59,7 +59,7 @@ include_once '../../vistas/templates/header.php'; ?>
 </div>
 <div class="row justify-content-center">
     <div class="col-lg-6">
-        <a href="../../controladores/clientes/buscar.php" class="btn btn-primary w-100">Regresar</a>
+        <a href="../../controladores/cliente/buscar.php" class="btn btn-primary w-100">Regresar</a>
     </div>
 </div>
 
