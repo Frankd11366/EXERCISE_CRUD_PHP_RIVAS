@@ -15,7 +15,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="../../vistas/cliente/index.php"><i class="bi bi-plus-circle me-2"></i>CREAR</a></li>
-            <li><a class="dropdown-item" href="../cliente/buscar.php"><i class="bi bi-search me-2"></i>BUSCAR</a></li>
+            <li><a class="dropdown-item" href="../../vistas/cliente/buscar.php"><i class="bi bi-search me-2"></i>BUSCAR</a></li>
           </ul>
         </li>
     </div>

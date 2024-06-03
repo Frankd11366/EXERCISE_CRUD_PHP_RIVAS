@@ -1,6 +1,6 @@
 <?php 
 
-include_once '../../vistas/templates/footer.php'; ?>
+include_once '../../vistas/templates/header.php'; ?>
 
 <h1 class="text-center">FORMULARIO DE CLIENTES</h1>
 <div class="row justify-content-center">

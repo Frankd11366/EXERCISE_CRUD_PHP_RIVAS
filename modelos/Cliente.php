@@ -23,7 +23,7 @@ class Cliente extends Conexion{
 
       // METODO PARA INSERTAR
       public function guardar(){
-        $sql = "INSERT into clientes (cli_nombre,
+        $sql = "INSERT into cliente (cli_nombre,
          cli_apellido, cli_nit, cli_telefono) values ('$this->cli_nombre',
          '$this->cli_apellido', '$this->cli_nit', '$this->cli_telefono')";
         $resultado = $this->ejecutar($sql);
